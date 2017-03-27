@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 
 [unreg-training-progress]: ./output/unregulated-loss.png 
 [dropout-training-progress]: ./output/dropout-loss.png 
-[real-traffic-signs]: ./output/real-signs.png
+[real-traffic-signs]: ./output/real-signs-color.png
 [real-traffic-signs-classified]: ./output/real-signs-classified.png
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
