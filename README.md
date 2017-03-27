@@ -93,8 +93,12 @@ My final model consists of the following layers:
 | ReLU | | |
 | Max pooling 2x2 | 10x10x16 | 5x5x16 |
 | Flatten | 5x5x16 | 400 |
-| Fully connected + dropout | 400 | 120 |
-| Fully connected + dropout | 120 | 84 |
+| Dropout | | |
+| Fully connected | 400 | 120 |
+| ReLU | | |
+| Fully connected | 120 | 84 |
+| ReLU | | | 
+| Dropout | | |
 | Fully connected | 84 | 43 |
 
 The final fully connected layer produces unscaled logits at output.
