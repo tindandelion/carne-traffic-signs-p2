@@ -1,9 +1,4 @@
 #**Traffic Sign Recognition** 
-
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -28,70 +23,47 @@ The goals / steps of this project are the following:
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
 ---
-###Writeup / README
-
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
-
-###Data Set Summary & Exploration
-
-####1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
-
-The code for this step is contained in the second code cell of the IPython notebook.  
-
-I used the pandas library to calculate summary statistics of the traffic
-signs data set:
-
-* The size of training set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
-
-####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
-
-The code for this step is contained in the third code cell of the IPython notebook.  
-
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
-
-![alt text][image1]
-
-###Design and Test a Model Architecture
-
-####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
-
-The code for this step is contained in the fourth code cell of the IPython notebook.
-
-As a first step, I decided to convert the images to grayscale because ...
-
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
-
-The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
-
-To cross validate my model, I randomly split the training data into a training set and validation set. I did this by ...
-
-My final training set had X number of images. My validation set and test set had Y and Z number of images.
-
-The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
+## Submitted files
 
 
-####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+## Data Set Summary & Exploration
+
+The code for this step is contained in the cell #4 of the IPython notebook. As long as the dataset is loaded 
+in from of numpy array, most summary points are immediately available:    
+
+* The size of training set is 34799 samples
+* The size of test set is 12630 samples
+* The shape of a traffic sign image is 32x32 px with 3 color channels (RGB)
+* The number of unique classes/labels in the data set is 43 (0-42)
+
+The code in cell #5 visualizes a sample content of the training dataset. To better understand the challenge, I 
+plot 10 randomly selected images for each label. This visualization shows how diverse the images belonging to the 
+same class are. 
+
+Later in the project I also explore how many samples of each class there are in training and validation dataset.   
+
+## Data preprocessing 
+
+As a preprocessing step, I convert images to grayscale (cell #7). It was mentioned in [this paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
+that grayscale images may show better performance. Indeed, my experiments in this project showed the prediction accuracy 
+gain from ~0.87 to ~0.9 when I implemented this step.
+   
+I decided not to do any further preprocessing, because I managed to achieve required accuracy threshold of 0.93 with other techniques,
+described below. 
+
+## Model architecture
+
+As a starting point, I used the LeNet-5 network architecture. The network without modifications showed prediction accuracy of 0.87 
+on the validation dataset, which I managed to raise to 0.9 after converting the images to grayscale. 
+
+When training the network, I noticed that the training error was decreasing to almost 0, but the validation error started to 
+increase after a certain iteration, which signified that the model was overfitting. To prevent that, I decided to try using 
+dropout in fully connected layers. Having experimented with different dropout rates, I found that the dropout rates of 0.3 through 0.6 were
+giving the best results on the validation dataset. I decided to use the dropout rate of 0.5 eventually.  
+
+## Final network architecture 
+
 
 The code for my final model is located in the seventh cell of the ipython notebook. 
 
