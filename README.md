@@ -48,7 +48,10 @@ label. This visualization shows how diverse the images belonging to the same
 class are.
 
 Later in the project I also explore how many samples of each class there are in
-training and validation dataset.
+training and validation dataset (see below in "Solution approach" section). It
+turns out that the training dataset is not evenly distributed among different
+image classes. This fact should be taken into account when I analyze the model's
+performance.
 
 ## Data preprocessing 
 
@@ -138,11 +141,11 @@ validation dataset. Code in cell #13 builds and displays the confusion matrix,
 as well as displays the distribution of different image classes in the training
 and validation dataset.  
 
-It is clear from these visualizations, that the model's performance isn't the
-same for different classes. They also show that the model shows poor performance
-on classes that are under-represented in the training dataset. It suggests that
-the accuracy can be further improved if I augment the dataset with more data
-samples for under-represented classes.
+One insight from these visualizations is that the model's performance varies for
+different classes. They also indicate that the model shows relatively poor
+performance on classes that are under-represented in the training dataset. It
+suggests that the accuracy can be further improved if I augment the dataset with
+more data samples for under-represented classes.
 
 ## Test a model on new images
 
