@@ -18,6 +18,7 @@ The goals / steps of this project are the following:
 [dropout-training-progress]: ./output/dropout-loss.png 
 [real-traffic-signs]: ./output/real-signs-color.png
 [real-traffic-signs-classified]: ./output/real-signs-classified.png
+[layer-1-vis]: ./output/layer-1-vis.png
 
 ## Submitted files
 
@@ -175,3 +176,11 @@ confident in its predictions: all classes are identified with the probability
 of 1.0 or close. 
 
 Even for the unknown classes the top predicted values are around 0.9. 
+
+## Visualize the network activations
+
+As a final step, I visualize the activations from the first convolutional layer,
+before the max pooling. The end result is presented in the cell #21 of the
+report: 
+
+![layer-1-vis]
