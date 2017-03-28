@@ -181,6 +181,8 @@ Even for the unknown classes the top predicted values are around 0.9.
 
 As a final step, I visualize the activations from the first convolutional layer,
 before the max pooling. The end result is presented in the cell #21 of the
-report: 
+notebook. This visualization shows that the network learned to recognize the
+overall shape of the traffic sign, as well as the details of the drawing inside
+the frame. 
 
 ![layer-1-vis]
