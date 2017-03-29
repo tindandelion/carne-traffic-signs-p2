@@ -171,6 +171,10 @@ The code that calculates predictions is located in the cell #17 in the notebook.
 The model was able to correctly identify 100% of the signs it was trained to
 classify. As for new sign classes, the prediction actually was quite close. 
 
+Compared to the accuracy on the provided test dataset (0.935), the accuracy on
+the new images (1.0) suggests that the model generalizes well over the new
+images, i. e. there's no indication of overfitting.
+
 ## Softmax probabilities
 
 The code to calculate the softmax probabilities for the new images is provided
