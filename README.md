@@ -147,7 +147,7 @@ performance on classes that are under-represented in the training dataset. It
 suggests that the accuracy can be further improved if I augment the dataset with
 more data samples for under-represented classes.
 
-## Test a model on new images
+## Test the model on new images
 
 The task in the project was to search for traffic sign images on the Internet,
 but I live in Finland, so I decided to go out and take pictures of different
